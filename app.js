@@ -22,6 +22,7 @@ app.get("/", (req,res) => {
   // })
 
   let result = getUpdate()
+  console.log(result)
   res.send(result)
 })
 

@@ -11,14 +11,13 @@ app.listen(process.env.PORT)
 
 const getUpdate = async () => {
   let req = await axios.get(`https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg/getUpdates`)
-  console.log(req)
   return req
 }
 
 app.get("/", (req, res) => {
 
   let result = getUpdate()
-  console.log(result.data)
+  console.log(result)
   let request = JSON.stringify(result.data)
 
   res.send(request)

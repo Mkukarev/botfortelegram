@@ -61,7 +61,6 @@ bot.onText(/\/audio/, function onAudioText(msg) {
   bot.sendAudio(msg.chat.id, audio);
 });
 
-
 // Matches /love
 bot.onText(/\/love/, function onLoveText(msg) {
   const opts = {

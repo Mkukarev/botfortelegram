@@ -18,6 +18,8 @@ const sayHi = ()=>{
   axios.get(`https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg/sendMessage?chat_id=560721174&text=hello`)
 }
 
+const currentText = null
+
 app.get("/", async (req, res) => {
 
   let result =  await getUpdate()
@@ -26,8 +28,9 @@ app.get("/", async (req, res) => {
 
   // console.log(result[result.length-1].message.text)
 
-  if (result[result.length-1].message.text === "привет"){
+  if (result[result.length-1].message.text === "привет" && result[result.length-1].update_id !== currentText){
     sayHi()
+    currentText = result[result.length-1].update_id
   }
   
   res.send(request)

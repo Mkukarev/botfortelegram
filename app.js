@@ -9,13 +9,19 @@ app.use(cors())
 app.use(bodyParser.json())
 app.listen(process.env.PORT)
 
+const getUpdate = ()=>{
+  return data = axios.get(`https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg/getUpdates`)
+}
+
 app.get("/", (req,res) => {
-  axios.get(`https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg/getUpdates`)
-  .then(data => {
-    let result = JSON.stringify(data)
-    res.send(result)
-  })
-  
+  // axios.get(`https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg/getUpdates`)
+  // .then(data => {
+  //   let result = JSON.stringify(data)
+  //   res.send(result)
+  // })
+
+  let result = getUpdate()
+  res.send(result)
 })
 
 /*

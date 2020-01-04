@@ -18,7 +18,7 @@ app.get("/", async (req, res) => {
 
   let result =  await getUpdate()
   // console.log(result)
-  let request = await JSON.stringify(result)
+  let request = JSON.stringify(result.data)
 
   res.send(request)
 })

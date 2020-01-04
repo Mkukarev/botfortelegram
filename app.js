@@ -14,9 +14,9 @@ const getUpdate = async () => {
   return req
 }
 
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
 
-  let result = getUpdate()
+  let result =  await getUpdate()
   console.log(result)
   let request = JSON.stringify(result.data)
 

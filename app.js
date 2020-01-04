@@ -9,18 +9,14 @@ app.use(cors())
 app.use(bodyParser.json())
 app.listen(process.env.PORT)
 
-const getUpdate = ()=>{
-  return axios.get(`https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg/getUpdates`).then(data => {return data})
+const getUpdate = () => {
+  return axios.get(`https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg/getUpdates`).then(data => { return data })
 }
 
-app.get("/", (req,res) => {
-  // axios.get(`https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg/getUpdates`)
-  // .then(data => {
-  //   let result = JSON.stringify(data)
-  //   res.send(result)
-  // })
+app.get("/", (req, res) => {
 
   let result = getUpdate()
+  console.log(result)
   let request = JSON.stringify(result)
 
   res.send(request)
@@ -74,7 +70,7 @@ const token = '864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg';
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, {polling: true});
 
-// 
+//
 // Matches "/echo [whatever]"
 bot.onText(/\/echo (.+)/, (msg, match) => {
   // 'msg' is the received Message from Telegram

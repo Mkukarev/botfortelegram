@@ -18,7 +18,7 @@ const sayHi = ()=>{
   axios.get(`https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg/sendMessage?chat_id=560721174&text=hello`)
 }
 
-const currentText = null
+let currentText = null
 
 app.get("/", async (req, res) => {
 

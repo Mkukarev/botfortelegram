@@ -10,7 +10,7 @@ app.use(bodyParser.json())
 app.listen(process.env.PORT)
 
 const getUpdate = ()=>{
-  let data = axios.get(`https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg/getUpdates`)
+  let data = axios.get(`https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg/getUpdates`).then(data => {return data})
   return JSON.stringify(data)
 }
 

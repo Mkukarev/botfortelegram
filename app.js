@@ -19,7 +19,7 @@ const sayHi = ()=>{
 }
 
 const sayHiInChat = ()=>{
-  axios.get(`https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg/sendMessage?chat_id=-1001477106393&text=Здарова_Бандиты!`)
+  axios.get(`https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg/sendMessage?chat_id=-1001477106393&text=ЗдароваБандиты!`)
 }
 // -1001477106393
 

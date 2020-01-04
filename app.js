@@ -24,9 +24,9 @@ app.get("/", async (req, res) => {
   // console.log(result)
   let request = JSON.stringify(result)
 
-  if (result[result.length].message.text === "привет"){
-    sayHi()
-  }
+  // if (result[result.length].message.text === "привет"){
+  //   sayHi()
+  // }
   
   res.send(request)
 })

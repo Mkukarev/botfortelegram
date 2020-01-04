@@ -26,7 +26,7 @@ app.get("/", async (req, res) => {
 
   // console.log(result[result.length-1].message.text)
 
-  if (result[result.length].message.text === "привет"){
+  if (result[result.length-1].message.text === "привет"){
     sayHi()
   }
   

@@ -11,15 +11,19 @@ app.listen(process.env.PORT)
 
 const getUpdate = async () => {
   let req = await axios.get(`https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg/getUpdates`)
-  return req
+  return req.data.result
+}
+
+const sayHi = ()=>{
+  axios.get(`https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg/sendMessage?chat_id=560721174&text=hello`)
 }
 
 app.get("/", async (req, res) => {
 
   let result =  await getUpdate()
   // console.log(result)
-  let request = JSON.stringify(result.data)
-
+  let request = JSON.stringify(result)
+  sayHi()
   res.send(request)
 })
 

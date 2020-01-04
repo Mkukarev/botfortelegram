@@ -1,7 +1,18 @@
-// const axios = require("axios")
-// const express = require("express")
-// const bodyParser = require("body-parser")
-// const app = express()
+const axios = require("axios")
+const express = require("express")
+const bodyParser = require("body-parser")
+const app = express()
+var cors = require('cors')
+
+app.use(cors())
+app.use(bodyParser.json())
+app.listen(process.env.PORT)
+
+app.get("/", (req,res) => {
+  res.send("hello Mike")
+})
+
+/*
 
 process.env.NTBA_FIX_319 = 1;
 
@@ -12,14 +23,7 @@ const token = '864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg';
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, {polling: true});
 
-// app.use(bodyParser.json())
-// app.listen(process.env.PORT)
-
-// app.post("/" + bot.token, (req,res) =>{
-//   bot.processUpdate(req.body)
-//   res.sendStatus(200)
-// })
-
+// 
 // Matches "/echo [whatever]"
 bot.onText(/\/echo (.+)/, (msg, match) => {
   // 'msg' is the received Message from Telegram
@@ -42,4 +46,4 @@ bot.on('message', (msg) => {
   bot.sendMessage(chatId, 'Received your message');
 });
 
-
+*/

@@ -9,8 +9,8 @@ app.use(cors())
 app.use(bodyParser.json())
 app.listen(process.env.PORT)
 
-const getUpdate = () => {
-  let req = axios.get(`https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg/getUpdates`).then(data => { return data })
+const getUpdate = async () => {
+  let req = await axios.get(`https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg/getUpdates`)
   console.log(req)
   return req
 }

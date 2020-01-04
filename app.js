@@ -16,6 +16,7 @@ const getUpdate = () => {
 app.get("/", (req, res) => {
 
   let result = getUpdate()
+  console.log(result.data)
   let request = JSON.stringify(result.data)
 
   res.send(request)

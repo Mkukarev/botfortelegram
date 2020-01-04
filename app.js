@@ -23,7 +23,11 @@ app.get("/", async (req, res) => {
   let result =  await getUpdate()
   // console.log(result)
   let request = JSON.stringify(result)
-  sayHi()
+  
+  if (result[result.lenght].message.text === "привет"){
+    sayHi()
+  }
+  
   res.send(request)
 })
 

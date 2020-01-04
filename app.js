@@ -12,7 +12,7 @@ app.listen(process.env.PORT)
 app.get("/", (req,res) => {
   axios.get(`https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg/getUpdates`)
   .then(data => {
-    let result = JSON.parse(data)
+    let result = JSON.stringify(data)
     res.send(result)
   })
   

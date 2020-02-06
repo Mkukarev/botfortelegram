@@ -18,7 +18,7 @@ let options = {
 }
 let setWebHook = () => {
   axios
-  .post(`https://api.telegram.org/bot${token}/setWebhook?url=http://localhost:8443/webhook`, {options})
+  .post(`https://api.telegram.org/bot${token}/setWebhook?url=http://blooming-plains-62173.herokuapp.com/webhook`, {options})
   // .then(res => console.log("tut"))
 }
 

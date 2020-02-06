@@ -1,13 +1,28 @@
-/*const axios = require("axios")
+const axios = require("axios")
 const express = require("express")
 const bodyParser = require("body-parser")
 const app = express()
 const cors = require('cors')
-// const token = '864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg'
+const token = '864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg'
+
+const webhookRouter = require('./src/routes/webhook')
 
 app.use(cors())
 app.use(bodyParser.json())
-app.listen(process.env.PORT)
+app.use("/webhook", webhookRouter)
+
+let options = {
+  webhook:{
+    port: process.env.PORT
+  }
+}
+let setWebHook = () => {
+  axios
+  .post(`https://api.telegram.org/bot${token}/setWebhook?url=http://localhost:8443/webhook`, {options})
+  // .then(res => console.log("tut"))
+}
+
+setWebHook()
 
 const getUpdate = async () => {
   let req = await axios.get(`https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg/getUpdates`)
@@ -26,22 +41,18 @@ const sayHiInChat = ()=>{
 let currentText = null
 
 app.get("/", async (req, res) => {
-
-  let result =  await getUpdate()
-  // console.log(result)
-  let request = JSON.stringify(result)
-
-  // console.log(result[result.length-1].message.text)
-
-  if (result[result.length-1].message.text === "привет" && result[result.length-1].update_id !== currentText){
-    sayHi()
-    currentText = result[result.length-1].update_id
-  }
-
-  sayHiInChat()
-  
-  res.send(request)
+  res.send(200)
 })
+
+
+
+let PORT = process.env.PORT || 3000
+// let PORT = 8443
+app.listen(PORT)
+
+
+
+
 
 /*
 

@@ -10,8 +10,9 @@ const myUrl = 'https://fierce-everglades-68164.herokuapp.com/'
 
 const webhookRouter = require('./src/routes/webhook')
 
-app.use(cors())
+// app.use(cors())
 app.use(bodyParser.json())
+app.use(express.logger())
 app.use("/webhook", webhookRouter)
 
 // let options = {

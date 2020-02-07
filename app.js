@@ -12,7 +12,6 @@ const webhookRouter = require('./src/routes/webhook')
 
 // app.use(cors())
 app.use(bodyParser.json())
-app.use(express.logger())
 app.use("/webhook", webhookRouter)
 
 // let options = {

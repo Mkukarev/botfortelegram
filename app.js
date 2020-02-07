@@ -26,12 +26,12 @@ app.use("/webhook", webhookRouter)
 //   .post(`${telegramUrl}${token}/setWebhook?url=${myUrl}webhook`)
 // }
 
-let setWebHook = () => {
-  axios
-.post(`${telegramUrl}${token}/setWebhook?url=${myUrl}webhook`)
-}
+// let setWebHook = () => {
+//   axios
+// .post(`${telegramUrl}${token}/setWebhook?url=${myUrl}webhook`)
+// }
 
-setWebHook()
+// setWebHook()
 
 const getUpdate = async () => {
   let req = await axios.get(`https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg/getUpdates`)

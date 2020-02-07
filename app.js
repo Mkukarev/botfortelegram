@@ -5,7 +5,8 @@ const app = express()
 const cors = require('cors')
 const token = '864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg'
 const telegramUrl = 'https://api.telegram.org/bot'
-const myUrl = 'https://449381ed.ngrok.io/'
+// const myUrl = 'https://449381ed.ngrok.io/'
+const myUrl = 'https://fierce-everglades-68164.herokuapp.com/'
 
 const webhookRouter = require('./src/routes/webhook')
 
@@ -20,9 +21,14 @@ app.use("/webhook", webhookRouter)
 // }
 
 
+// let setWebHook = () => {
+//     axios
+//   .post(`${telegramUrl}${token}/setWebhook?url=${myUrl}webhook`)
+// }
+
 let setWebHook = () => {
-    axios
-  .post(`${telegramUrl}${token}/setWebhook?url=${myUrl}webhook`)
+  axios
+.post(`${telegramUrl}${token}/setWebhook?url=${myUrl}webhook`)
 }
 
 setWebHook()

@@ -5,12 +5,12 @@ const app = express()
 const cors = require('cors')
 const token = '864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg'
 const telegramUrl = 'https://api.telegram.org/bot'
-// const myUrl = 'https://449381ed.ngrok.io/'
-const myUrl = 'https://fierce-everglades-68164.herokuapp.com/'
+// const myUrl = 'https://e0fc1132.ngrok.io'
+const myUrl = 'https://fierce-everglades-68164.herokuapp.com'
 
 const webhookRouter = require('./src/routes/webhook')
 
-// app.use(cors())
+app.use(cors())
 app.use(bodyParser.json())
 app.use("/webhook", webhookRouter)
 
@@ -26,12 +26,12 @@ app.use("/webhook", webhookRouter)
 //   .post(`${telegramUrl}${token}/setWebhook?url=${myUrl}webhook`)
 // }
 
-// let setWebHook = () => {
-//   axios
-// .post(`${telegramUrl}${token}/setWebhook?url=${myUrl}webhook`)
-// }
+let setWebHook = () => {
+  axios
+.post(`${telegramUrl}${token}/setWebhook?url=${myUrl}/webhook`)
+}
 
-// setWebHook()
+setWebHook()
 
 const getUpdate = async () => {
   let req = await axios.get(`https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg/getUpdates`)
@@ -47,16 +47,17 @@ const sayHiInChat = ()=>{
 }
 // -1001477106393
 
-let currentText = null
-
 app.get("/", async (req, res) => {
   res.send('<h1>Здарова Бандиты!</h1>')
 })
 
+// app.post("/", async (req, res) => {
+//   console.log(req.body)
+//   res.sendStatus(200)
+// })
 
-
-let PORT = process.env.PORT
-// let PORT = 8080
+// let PORT = process.env.PORT
+let PORT = 8080
 app.listen(PORT)
 
 

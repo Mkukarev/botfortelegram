@@ -4,6 +4,8 @@ const bodyParser = require("body-parser")
 const app = express()
 const cors = require('cors')
 const token = '864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg'
+const telegramUrl = 'https://api.telegram.org/bot'
+const myUrl = 'https://449381ed.ngrok.io/'
 
 const webhookRouter = require('./src/routes/webhook')
 
@@ -11,15 +13,16 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use("/webhook", webhookRouter)
 
-let options = {
-  webhook:{
-    port: process.env.PORT
-  }
-}
+// let options = {
+//   webhook:{
+//     port: process.env.PORT
+//   }
+// }
+
+
 let setWebHook = () => {
-  axios
-  .post(`https://api.telegram.org/bot${token}/setWebhook?url=http://blooming-plains-62173.herokuapp.com/webhook`, {options})
-  // .then(res => console.log("tut"))
+    axios
+  .post(`${telegramUrl}${token}/setWebhook?url=${myUrl}webhook`)
 }
 
 setWebHook()
@@ -41,14 +44,15 @@ const sayHiInChat = ()=>{
 let currentText = null
 
 app.get("/", async (req, res) => {
-  res.send(200)
+  res.send('<h1>Здарова Бандиты!</h1>')
 })
 
 
 
-let PORT = process.env.PORT || 3000
-// let PORT = 8443
+// let PORT = process.env.PORT || 3000
+let PORT = 8080
 app.listen(PORT)
+
 
 
 

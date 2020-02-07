@@ -55,8 +55,8 @@ app.get("/", async (req, res) => {
 
 
 
-// let PORT = process.env.PORT || 3000
-let PORT = 8080
+let PORT = process.env.PORT
+// let PORT = 8080
 app.listen(PORT)
 
 

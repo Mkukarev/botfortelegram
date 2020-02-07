@@ -56,8 +56,8 @@ app.get("/", async (req, res) => {
 //   res.sendStatus(200)
 // })
 
-// let PORT = process.env.PORT
-let PORT = 8080
+let PORT = process.env.PORT
+// let PORT = 8080
 app.listen(PORT)
 
 

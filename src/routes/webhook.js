@@ -22,7 +22,7 @@ router.post("/", (req, res)=>{
     if (req.body.message != undefined){
         if(req.body.message.text == "3"){
         // sayHiInChat()
-        // axios.get(`https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg/sendMessage?chat_id=-1001477106393&text=ЗдароваБандиты!`)
+        axios.get(`https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg/sendMessage?chat_id=-1001477106393&text=ЗдароваБандиты!`)
         // console.log("tut")
         // sayHi()
     }

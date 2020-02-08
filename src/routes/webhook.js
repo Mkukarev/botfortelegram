@@ -65,7 +65,7 @@ let checkTime = () => {
     let hour= time.getHours()
     let minutes= time.getMinutes()
     let seconds = time.getSeconds()
-    console.log(day, hour, minutes, seconds)
+    // console.log(day, hour, minutes, seconds)
     if (day === 1 && hour === 4 && minutes === 0 && seconds === 0){sendVideo(daysVideoArray[0])}
     if (day === 2 && hour === 4 && minutes === 0 && seconds === 0){sendVideo(daysVideoArray[1])}
     if (day === 3 && hour === 4 && minutes === 0 && seconds === 0){sendVideo(daysVideoArray[2])}

@@ -7,14 +7,14 @@ const token = '864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg'
 const telegramUrl = 'https://api.telegram.org/bot'
 
 // -----  Разработка ------------------------------------------------------
-const myUrl = 'https://a0d80a2e.ngrok.io'
-let PORT = 8080
+// const myUrl = 'https://a0d80a2e.ngrok.io'
+// let PORT = 8080
 //-------------------------------------------------------------------------
 
 
 // ------ Прод --------------------------------------------------------------
-// const myUrl = 'https://stark-woodland-80135.herokuapp.com'
-// let PORT = process.env.PORT
+const myUrl = 'https://stark-woodland-80135.herokuapp.com'
+let PORT = process.env.PORT
 //--------------------------------------------------------------------------
 
 

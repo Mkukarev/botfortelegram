@@ -35,7 +35,7 @@ let wakeUpServer = () => {
   axios.get(myUrl)
 }
 
-setInterval(wakeUpServer, 60000)
+setInterval(wakeUpServer, 1200000)
 // -----------------------------------------------------------------
 
 app.get("/", async (req, res) => {

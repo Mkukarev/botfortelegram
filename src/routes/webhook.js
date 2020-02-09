@@ -1,7 +1,7 @@
 const axios = require('axios')
 const { Router } = require('express')
 const router = Router()
-const msgUrl = 'https://api.telegram.org/bot864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg'
+// const msgUrl = 'https://api.telegram.org/bot
 
 let wordsBotAnswers = ["заебумба", "Заебумба", "бот", "тест", "эй"]
 let botAnswers = ['Ебаный РОАД!', 'Кто нахуй?', "не подходи, с ножа пырну", "ты че опять упал в лужу еблом?", "АЛО ВАСЬ, ЭТО ТЫ?"]
@@ -24,7 +24,7 @@ const randomAnswers = (array) => {
 const sendMessage = (message) => {
     axios.get(`${msgUrl}/sendMessage`, {
         params: {
-            'chat_id': '-1001477106393',
+//             'chat_id': ,
             'text': message
         }
     })
@@ -36,7 +36,7 @@ const sendMessage = (message) => {
 const sendVideo = (video) => {
     axios.get(`${msgUrl}/sendVideo`, {
         params: {
-            'chat_id': '-1001477106393',
+//             'chat_id': '',
             'video': video
         }})
         .catch((err) => {

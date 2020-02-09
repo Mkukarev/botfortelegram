@@ -4,7 +4,7 @@ const bodyParser = require("body-parser")
 const app = express()
 const cors = require('cors')
 const webhookRouter = require('./src/routes/webhook')
-const token = '864912065:AAEZ6W467E4-fqvtg29viBxeP6RFcTprfGg'
+// const token = 
 const telegramUrl = 'https://api.telegram.org/bot'
 
 // -----  Разработка ------------------------------------------------------

@@ -78,16 +78,16 @@ setInterval(checkTime, 1000)
 // -------------------------------------------------------------------------------------------------------
 
 // Отображаем в логах время раз в минуту
-let currentTime = () =>{
-    let time = new Date()
-    console.log(
-        time.getDay(),
-        time.getHours(),
-        time.getMinutes()
-    )
-}
+// let currentTime = () =>{
+//     let time = new Date()
+//     console.log(
+//         time.getDay(),
+//         time.getHours(),
+//         time.getMinutes()
+//     )
+// }
 
-setInterval(currentTime, 60000)
+// setInterval(currentTime, 60000)
 
 module.exports = router
 

@@ -71,7 +71,7 @@ let checkTime = () => {
     if (day === 4 && hour === 4 && minutes === 0 && seconds === 0){sendVideo(daysVideoArray[3])}
     if (day === 5 && hour === 12 && minutes === 20 && seconds === 0){sendVideo(daysVideoArray[4])}
     if (day === 6 && hour === 5 && minutes === 0 && seconds === 0){sendVideo(daysVideoArray[5])}
-    if (day === 7 && hour === 5 && minutes === 0 && seconds === 0){sendVideo(daysVideoArray[6])}
+    if (day === 0 && hour === 5 && minutes === 0 && seconds === 0){sendVideo(daysVideoArray[6])}
 }
 
 setInterval(checkTime, 1000)
